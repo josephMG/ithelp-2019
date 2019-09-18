@@ -4,11 +4,12 @@ package main
 import (
 	"os"
 
+	language "./modules/natural_language"
 	video "./modules/video"
 	vision "./modules/vision"
 )
 
-// use `docker run -it golang ./app [DayXX]` to run
+// Usage: `docker run -it golang ./app [DayXX]`
 func main() {
 	arg := os.Args[1]
 
@@ -22,5 +23,7 @@ func main() {
 	} else if arg == "Day8" {
 		video.ShotChangeURI(os.Stdout, "gs://cloud-samples-data/video/gbikes_dinosaur.mp4")
 		video.TextDetectionGCS(os.Stdout, "gs://python-docs-samples-tests/video/googlework_short.mp4")
+	} else if arg == "Day11" {
+		language.DemoCode(os.Stdout, "Hello World")
 	}
 }
