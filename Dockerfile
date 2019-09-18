@@ -13,4 +13,6 @@ RUN /app/get.sh
 
 ADD . /app
 RUN cd /app && go build -o app
-ENTRYPOINT ./app
+
+CMD []
+# ENTRYPOINT ./app
