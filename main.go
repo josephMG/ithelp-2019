@@ -5,6 +5,7 @@ import (
 	"os"
 
 	language "./modules/natural_language"
+	text_to_speech "./modules/text_to_speech"
 	translation "./modules/translation"
 	video "./modules/video"
 	vision "./modules/vision"
@@ -38,5 +39,8 @@ func main() {
 		// Please download http://data.statmt.org/news-commentary/v14/ en and zh files to testdata/translate
 		// Usage: docker run -v ${PWD}/testdata:/app/testdata -it golang ./app Day17
 		translation.ProcTranslateFiles()
+	} else if arg == "Day19" {
+		// Usage: docker run -v ${PWD}/testdata:/app/testdata -it golang ./app Day18
+		text_to_speech.ConvertToSpeech("Hello world")
 	}
 }
