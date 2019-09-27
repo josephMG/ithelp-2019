@@ -40,7 +40,12 @@ func main() {
 		// Usage: docker run -v ${PWD}/testdata:/app/testdata -it golang ./app Day17
 		translation.ProcTranslateFiles()
 	} else if arg == "Day19" {
-		// Usage: docker run -v ${PWD}/testdata:/app/testdata -it golang ./app Day18
+		// Usage: docker run -v ${PWD}/testdata:/app/testdata -it golang ./app Day19
 		text_to_speech.ConvertToSpeech("Hello world")
+	} else if arg == "Day20" {
+		text_to_speech.ListVoices(os.Stdout)
+		text_to_speech.SSMLToSpeech("<speak>The <say-as interpret-as=\"characters\">SSML</say-as>" +
+			"standard <break time=\"1s\"/>is defined by the" +
+			"<sub alias=\"World Wide Web Consortium\">W3C</sub>.</speak>")
 	}
 }
