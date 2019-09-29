@@ -5,6 +5,7 @@ import (
 	"os"
 
 	language "./modules/natural_language"
+	speech_to_text "./modules/speech_to_text"
 	text_to_speech "./modules/text_to_speech"
 	translation "./modules/translation"
 	video "./modules/video"
@@ -47,5 +48,7 @@ func main() {
 		text_to_speech.SSMLToSpeech("<speak>The <say-as interpret-as=\"characters\">SSML</say-as>" +
 			"standard <break time=\"1s\"/>is defined by the" +
 			"<sub alias=\"World Wide Web Consortium\">W3C</sub>.</speak>")
+	} else if arg == "Day22" {
+		speech_to_text.DemoCode("./testdata/speech_to_text/audio.raw")
 	}
 }
