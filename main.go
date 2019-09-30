@@ -50,5 +50,7 @@ func main() {
 			"<sub alias=\"World Wide Web Consortium\">W3C</sub>.</speak>")
 	} else if arg == "Day22" {
 		speech_to_text.DemoCode("./testdata/speech_to_text/audio.raw")
+	} else if arg == "Day23" {
+		speech_to_text.ChineseSpeech("./testdata/speech_to_text/try.mp3")
 	}
 }
