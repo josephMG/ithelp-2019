@@ -4,6 +4,7 @@ package main
 import (
 	"os"
 
+	dialogflow "./modules/dialogflow"
 	language "./modules/natural_language"
 	speech_to_text "./modules/speech_to_text"
 	text_to_speech "./modules/text_to_speech"
@@ -13,7 +14,7 @@ import (
 )
 
 // Usage: `docker run -it --env PROJECT_ID=YOUR_PROJECT_ID golang ./app [DayXX]`
-//				 PROJECT_ID is used in Day16
+//				 PROJECT_ID is used in Day16, Day25
 func main() {
 	arg := os.Args[1]
 
@@ -52,5 +53,7 @@ func main() {
 		speech_to_text.DemoCode("./testdata/speech_to_text/audio.raw")
 	} else if arg == "Day23" {
 		speech_to_text.ChineseSpeech("./testdata/speech_to_text/try.mp3")
+	} else if arg == "Day25" {
+		dialogflow.DetectIntentText("123456789", "嗨", "zh-TW")
 	}
 }
