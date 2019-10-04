@@ -4,6 +4,7 @@ package main
 import (
 	"os"
 
+	automl_table "./modules/automl_table"
 	dialogflow "./modules/dialogflow"
 	language "./modules/natural_language"
 	speech_to_text "./modules/speech_to_text"
@@ -15,6 +16,8 @@ import (
 
 // Usage: `docker run -it --env PROJECT_ID=YOUR_PROJECT_ID golang ./app [DayXX]`
 //				 PROJECT_ID is used in Day16, Day25
+// Usage: `docker run -it --env PROJECT_NUMBER=XXXXXXX --env MODEL_NAME=XXXXXXXXXXXXXX golang ./app [DayXX]`
+//				 used in Day27
 func main() {
 	arg := os.Args[1]
 
@@ -55,5 +58,7 @@ func main() {
 		speech_to_text.ChineseSpeech("./testdata/speech_to_text/try.mp3")
 	} else if arg == "Day25" {
 		dialogflow.DetectIntentText("123456789", "嗨", "zh-TW")
+	} else if arg == "Day27" {
+		automl_table.OnlinePredict()
 	}
 }

@@ -43,7 +43,7 @@ func TranslateText(text []string) error {
 }
 
 func TranslateTextV3Beta1(text []string) error {
-	token, _ := auth.ServiceAccount("./authentication.json")
+	token, _ := auth.ServiceAccount("./authentication.json", "https://www.googleapis.com/auth/cloud-translation")
 
 	header := req.Header{
 		"Accept":        "application/json",
